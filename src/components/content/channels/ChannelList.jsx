@@ -22,8 +22,8 @@ class ChannelList extends react.Component {
 				<Channel name={"테스트공개채널02"} />
 
 				<ChannelType image={privateChat} type="개인채널" />
-				{test.map((c) => (
-					<Channel name={c.name} />
+				{test.map((c, i) => (
+					<Channel name={c.name} key={i} />
 				))}
 			</div>
 		);

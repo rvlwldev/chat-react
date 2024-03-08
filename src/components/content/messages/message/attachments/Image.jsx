@@ -6,6 +6,6 @@ import sample1 from "assets/test/screenshot1.png";
 
 export default class Image extends react.Component {
 	render() {
-		return <img class="attachment" src={sample1} alt="" />;
+		return <img className="attachment" src={sample1} alt="" />;
 	}
 }
