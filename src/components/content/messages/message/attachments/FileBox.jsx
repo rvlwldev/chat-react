@@ -2,7 +2,7 @@ import "./Style.css";
 
 import react from "react";
 
-import downloadImage from "../../../../../assets/messages/download.png";
+import downloadImage from "assets/messages/download.png";
 
 export default class FileBox extends react.Component {
 	render() {

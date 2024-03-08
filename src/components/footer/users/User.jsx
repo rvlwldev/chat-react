@@ -1,10 +1,10 @@
 import React from "react";
 import "./Style.css";
 
-import noProfile from "../../../assets/commons/no-profile.png";
-import alarmOn from "../../../assets/commons/alarm-on.png";
-import alarmOff from "../../../assets/commons/alarm-off.png";
-import setting from "../../../assets/commons/setting.png";
+import noProfile from "assets/commons/no-profile.png";
+import alarmOn from "assets/commons/alarm-on.png";
+import alarmOff from "assets/commons/alarm-off.png";
+import setting from "assets/commons/setting.png";
 
 class User extends React.Component {
 	render() {

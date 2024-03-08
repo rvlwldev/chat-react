@@ -1,15 +1,15 @@
 import "./Style.css";
 
 // header's children
-import Service from "./components/header/service/Service";
+import Service from "components/header/service/Service";
 
 // content's children
-import ChannelList from "./components/content/channels/ChannelList";
-import MessageList from "./components/content/messages/MessageList";
+import ChannelList from "components/content/channels/ChannelList";
+import MessageList from "components/content/messages/MessageList";
 
 // footer's children
-import User from "./components/footer/users/User";
-import MessageInput from "./components/footer/messageInput/MessageInput";
+import User from "components/footer/users/User";
+import MessageInput from "components/footer/messageInput/MessageInput";
 
 const App = () => (
 	<div className="container">

@@ -1,8 +1,8 @@
 import "./Style.css";
 import react from "react";
 
-import publicChat from "../../../assets/channels/public-chat.png";
-import privateChat from "../../../assets/channels/private-chat.png";
+import publicChat from "assets/channels/public-chat.png";
+import privateChat from "assets/channels/private-chat.png";
 
 import ChannelType from "./channel/ChannelType";
 import Channel from "./channel/Channel";

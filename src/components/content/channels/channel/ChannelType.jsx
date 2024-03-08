@@ -1,6 +1,6 @@
 import react from "react";
 
-import create from "../../../../assets/channels/create.png";
+import create from "assets/channels/create.png";
 
 class ChannelType extends react.Component {
 	render() {

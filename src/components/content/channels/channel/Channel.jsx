@@ -1,8 +1,8 @@
 import react from "react";
 
-import icon from "../../../../assets/channels/private-chat.png";
-import invite from "../../../../assets/channels/add-people.png";
-import setting from "../../../../assets/commons/setting.png";
+import icon from "assets/channels/private-chat.png";
+import invite from "assets/channels/add-people.png";
+import setting from "assets/commons/setting.png";
 
 class Channel extends react.Component {
 	render() {

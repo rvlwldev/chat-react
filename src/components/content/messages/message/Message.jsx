@@ -4,7 +4,7 @@ import Image from "./attachments/Image";
 import Video from "./attachments/Video";
 import FileBox from "./attachments/FileBox";
 
-import noProfile from "../../../../assets/commons/no-profile.png";
+import noProfile from "assets/commons/no-profile.png";
 
 export default class Message extends react.Component {
 	render() {
