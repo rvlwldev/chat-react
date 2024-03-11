@@ -1,5 +1,4 @@
 #root {
-	height: 100vh;
 	margin: 0;
 }
 
@@ -16,19 +15,20 @@
 }
 
 .header {
+	grid-row: 1;
+
 	background: 36393f;
 	grid-column: 1 / -1;
-	grid-row: 1;
 }
 
 .content {
-	grid-column: 1 / -1;
 	grid-row: 2;
+	grid-column: 1 / -1;
 }
 
 .footer {
-	grid-column: 1 / -1;
 	grid-row: 3;
+	grid-column: 1 / -1;
 }
 
 .tooltip-box {
