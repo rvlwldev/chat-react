@@ -1,10 +1,10 @@
-import React from "react";
+import "./Style.css";
 
-import "./Service.css";
+import React from "react";
 
 class Service extends React.Component {
 	render() {
-		return <div className="service">ZXCDfzxcvzxcv</div>;
+		return <div className="service"></div>;
 	}
 }
 

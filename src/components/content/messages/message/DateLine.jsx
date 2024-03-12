@@ -1,6 +1,6 @@
 import react from "react";
 
-export default class Message extends react.Component {
+export default class DateLine extends react.Component {
 	render() {
 		return (
 			<div className="date-line">

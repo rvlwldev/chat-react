@@ -13,15 +13,8 @@ export default class Message extends react.Component {
 				<img className="picture" src={noProfile} alt="" />
 
 				<div className="header">
-					<div className="user">
-						<div className="user-name">테스트(전산)</div>
-						<div className="send-time">09:11</div>
-					</div>
-					{/* <Image />
-					<Video /> */}
-
-					<FileBox />
-
+					<div className="user-name">테스트(전산)</div>
+					<div className="send-time">09:11</div>
 					<div className="text">{this.props.text}</div>
 				</div>
 			</div>
