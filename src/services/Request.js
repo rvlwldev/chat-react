@@ -1,4 +1,6 @@
 class RequestByFetch {
+	#token;
+
 	#toURL(/** @type String  */ rawURL, params = {}) {
 		const url = rawURL.startsWith("/")
 			? new URL(`${process.env.REACT_APP_SERVER}${rawURL}`)
@@ -12,27 +14,31 @@ class RequestByFetch {
 		return url;
 	}
 
-	async post(url, body, authorization, contentType = "application/json") {
-		return await fetch(this.#toURL(url), {
+	setToken = (token) => (this.#token = token);
+
+	post = async (url, body = {}, contentType = "application/json") =>
+		await fetch(this.#toURL(url), {
 			method: "POST",
 			mode: "cors",
 			headers: {
 				"Content-Type": contentType,
-				Authorization: authorization,
+				Authorization: this.#token,
 			},
 			body: typeof body == "string" ? body : JSON.stringify(body),
-		}).then(async (data) => await data.json());
-	}
+		})
+			.then(async (data) => await data.json())
+			.catch((err) => err);
 
-	async get(url, params = {}, authorization, contentType) {
-		return await fetch(this.#toURL(url, params), {
+	get = async (url, params = {}, contentType = "application/json") =>
+		await fetch(this.#toURL(url, params), {
 			mode: "cors",
 			headers: {
 				"Content-Type": contentType,
-				Authorization: authorization,
+				Authorization: this.#token,
 			},
-		}).then(async (data) => await data.json());
-	}
+		})
+			.then(async (data) => await data.json())
+			.catch((err) => err);
 }
 
 export default new RequestByFetch();

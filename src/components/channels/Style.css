@@ -1,20 +1,3 @@
-.channel-list {
-	position: fixed;
-	bottom: 70px;
-	top: 50px;
-	left: 0;
-	width: 280px;
-
-	padding: 5px;
-
-	background: rgb(40, 40, 40);
-	color: #96989d;
-	align-items: center;
-
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
 .channel-list .type {
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr;

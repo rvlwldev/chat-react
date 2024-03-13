@@ -1,5 +1,3 @@
-import "./Style.css";
-
 import react from "react";
 
 import sample1 from "assets/test/video1.mp4";

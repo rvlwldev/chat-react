@@ -5,9 +5,8 @@ import alarmOn from "assets/commons/alarm-on.png";
 import alarmOff from "assets/commons/alarm-off.png";
 import setting from "assets/commons/setting.png";
 
-const User = async () => {
-	const alarm = false;
-	const setAlarm = () => {};
+const User = (props) => {
+	const { user, alarm, setAlarm } = props;
 
 	return (
 		<div className="user">
@@ -15,8 +14,9 @@ const User = async () => {
 				<p className="tooltip-message">내 정보 보기</p>
 				<img src={noProfile} alt="" />
 			</div>
-			{/* <p className="name">{user ? user.name : "(알 수 없음)"}</p> */}
-			<p className="name">{"(알 수 없음)"}</p>
+
+			<p className="name">{user ? user.name : "(알 수 없음)"}</p>
+
 			<div className="icons">
 				{alarm ? (
 					<div className="tooltip-box">

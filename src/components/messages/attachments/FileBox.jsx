@@ -1,5 +1,3 @@
-import "./Style.css";
-
 import react from "react";
 
 import downloadImage from "assets/messages/download.png";

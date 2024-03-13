@@ -3,10 +3,12 @@ import invite from "assets/channels/add-people.png";
 import setting from "assets/commons/setting.png";
 
 const Channel = (props) => {
+	const channel = props.channel;
+
 	return (
 		<div className="channel">
 			<img className="icon" src={icon} alt="" />
-			<p className="name">{props.name}</p>
+			<p className="name">{channel.name}</p>
 
 			<div className="channel-option">
 				<div className="tooltip-box">
