@@ -2,13 +2,24 @@ import icon from "assets/channels/private-chat.png";
 import invite from "assets/channels/add-people.png";
 import setting from "assets/commons/setting.png";
 
+import channelStore from "stores/Channel";
+
 const Channel = (props) => {
 	const channel = props.channel;
 
+	const { setActiveChannel } = channelStore();
+
 	return (
 		<div className="channel">
-			<img className="icon" src={icon} alt="" />
-			<p className="name">{channel.name}</p>
+			<img
+				className="icon"
+				src={icon}
+				alt=""
+				onClick={() => setActiveChannel(channel)}
+			/>
+			<p className="name" onClick={() => setActiveChannel(channel)}>
+				{channel.name}
+			</p>
 
 			<div className="channel-option">
 				<div className="tooltip-box">

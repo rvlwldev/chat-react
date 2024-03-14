@@ -1,22 +1,41 @@
 import "./Style.css";
 
-import react from "react";
+import { useEffect } from "react";
 
 import DateLine from "./DateLine";
 import Message from "./Message";
 
-export default class MessageList extends react.Component {
-	render() {
-		return (
-			<div className="message-list">
-				<DateLine />
+import channelStore from "stores/Channel";
+import messageStore from "stores/Message";
 
-				<Message text={"rkfrkf"} key={1} />
+const MessageList = () => {
+	const { activeChannel } = channelStore();
+	const {
+		/** @type Array */ messageList,
+		/** @type Function */ setMessageList,
+		/** @type Function */ fetchMessages,
+	} = messageStore();
 
-				{/* {test.map((c, i) => (
-					<Message text={c.text} key={i} />
-				))} */}
-			</div>
-		);
-	}
-}
+	useEffect(() => {
+		const params = {};
+
+		if (messageList.length > 0)
+			params.lastMessageId = messageList[messageList.length - 1].id;
+
+		(async () => {
+			if (activeChannel.id)
+				setMessageList(await fetchMessages(activeChannel.id, params));
+		})();
+	}, [activeChannel]);
+
+	return (
+		<div className="message-list">
+			<DateLine />
+			{messageList.map((message) => (
+				<Message message={message} key={message.id} />
+			))}
+		</div>
+	);
+};
+
+export default MessageList;

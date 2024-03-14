@@ -1,7 +1,10 @@
 import { create } from "zustand";
 import Request from "services/Request";
 
-export default create((set, get, _state) => ({
+export default create((set) => ({
+	activeChannel: {},
+	setActiveChannel: (channel) => set({ activeChannel: channel }),
+
 	publicChannels: [],
 	addPublicChannel: (channel) => {
 		if (channel instanceof Array)
@@ -26,10 +29,8 @@ export default create((set, get, _state) => ({
 			}));
 	},
 
-	activeChannel: {},
-	setActiveChannel: () => {},
-
-	fetchChannels: async () => {
-		return await Request.get("users/channels").then((res) => res.channels);
-	},
+	fetchChannels: async () =>
+		await Request.get(Request.ROUTES.CHANNEL().ALL).then(
+			(res) => res.channels
+		),
 }));

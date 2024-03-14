@@ -47,6 +47,8 @@ const App = () => {
 					<MessageList />
 					<MessageInput />
 				</>
+			) : invalidToken ? (
+				<h1>비정상적인 접근입니다. 다시 로그인해주세요</h1>
 			) : (
 				<h1>접속중 ... </h1>
 			)}

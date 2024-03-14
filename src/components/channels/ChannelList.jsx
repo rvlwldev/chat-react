@@ -16,6 +16,7 @@ const ChannelList = () => {
 		addPublicChannel,
 		privateChannels,
 		addPrivateChannel,
+		setActiveChannel,
 		fetchChannels,
 	} = channelStore();
 
@@ -27,6 +28,8 @@ const ChannelList = () => {
 
 			addPublicChannel(pubs);
 			addPrivateChannel(pris);
+
+			setActiveChannel(pubs[0]);
 		})();
 	}, []);
 

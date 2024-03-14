@@ -21,7 +21,9 @@ export default create((set, get, _state) => ({
 		const { isAuthenticated, user } = get();
 		if (isAuthenticated) return async () => user;
 
-		const result = await Request.post("/users/authenticate", { token });
+		const result = await Request.post(Request.ROUTES.AUTHENTICATE, {
+			token,
+		});
 		if (result?.error) throw result;
 
 		set({ user: result, token: token });
