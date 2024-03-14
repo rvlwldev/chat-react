@@ -1,0 +1,57 @@
+#root {
+	height: 100vh;
+	margin: 0;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: minmax(100px, 1fr) minmax(400px, 5fr);
+	grid-template-rows: 1fr 18fr 1fr;
+	height: 100%;
+}
+
+.parent {
+	display: grid;
+	grid-template-columns: minmax(200px, 1fr) minmax(400px, 5fr);
+}
+
+.header {
+	background: 36393f;
+	grid-column: 1 / -1;
+	grid-row: 1;
+}
+
+.content {
+	grid-column: 1 / -1;
+	grid-row: 2;
+}
+
+.footer {
+	grid-column: 1 / -1;
+	grid-row: 3;
+}
+
+.tooltip-box {
+	position: relative;
+}
+
+.tooltip-box:hover .tooltip-message {
+	opacity: 1;
+}
+
+.tooltip-box .tooltip-message {
+	opacity: 0;
+	position: absolute;
+	top: -40px;
+
+	background: black;
+	color: rgb(218, 218, 218) !important;
+	white-space: nowrap;
+	border-radius: 7px;
+	padding: 8px;
+
+	font-size: 15px;
+	font-weight: bold;
+
+	pointer-events: none;
+}
