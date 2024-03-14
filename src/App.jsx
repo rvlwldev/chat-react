@@ -1,32 +1,59 @@
 import "./Style.css";
 
-// header's children
-import Service from "./components/header/service/Service";
+import { useEffect } from "react";
 
-// content's children
-import ChannelList from "./components/content/channels/ChannelList";
-import MessageList from "./components/content/messages/MessageList";
+// components
+import Service from "components/navbars/Service";
+import ChannelList from "components/channels/ChannelList";
+import User from "components/users/User";
 
-// footer's children
-import User from "./components/footer/users/User";
-import MessageInput from "./components/footer/messageInput/MessageInput";
+import Title from "components/navbars/Title";
+import MessageList from "components/messages/MessageList";
+import MessageInput from "components/messages/MessageInput";
 
-const App = () => (
-	<div className="container">
-		<div className="parent header">
-			<Service />
+// stores
+import userStore from "stores/User";
+
+// services
+import Request from "services/Request";
+
+const App = () => {
+	const {
+		fetchAuthenticate,
+		setUserAuthentication,
+		isAuthenticated,
+		invalidToken,
+		user,
+	} = userStore();
+
+	useEffect(() => {
+		(async () =>
+			await fetchAuthenticate()
+				.then((result) => {
+					setUserAuthentication(true);
+					Request.setToken(result.token);
+				})
+				.catch(() => setUserAuthentication(false)))(); // TODO : Redirect
+	}, []);
+
+	return (
+		<div className="container">
+			{isAuthenticated ? (
+				<>
+					<User user={user} />
+					<Service />
+					<ChannelList />
+					<Title />
+					<MessageList />
+					<MessageInput />
+				</>
+			) : invalidToken ? (
+				<h1>비정상적인 접근입니다. 다시 로그인해주세요</h1>
+			) : (
+				<h1>접속중 ... </h1>
+			)}
 		</div>
-
-		<div className="parent content">
-			<ChannelList />
-			<MessageList />
-		</div>
-
-		<div className="parent footer">
-			<User />
-			<MessageInput />
-		</div>
-	</div>
-);
+	);
+};
 
 export default App;

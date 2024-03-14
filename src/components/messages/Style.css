@@ -1,0 +1,160 @@
+.date-line {
+	background: rgb(87, 87, 87);
+
+	position: relative;
+	display: flex;
+	height: 1px;
+	width: 100%;
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.date-line .date {
+	background: #36393f;
+	position: relative;
+	color: #a3a692;
+
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1px;
+
+	padding: 0px 10px;
+}
+
+.message {
+	color: white;
+
+	position: relative;
+
+	display: flex;
+	align-items: flex-start;
+
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.message .header {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-left: 10px;
+}
+
+.message .header .user {
+	display: flex;
+	background: #36393f;
+	padding: 0;
+	margin: 0;
+
+	font-size: 15px;
+}
+
+.message .header .send-time {
+	font-size: 13px;
+	color: #a3a692;
+	padding: 0 8px;
+	margin: 0;
+}
+
+.message .text {
+	display: block;
+	color: #d6d7ca;
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+.message-input img {
+	height: 35px;
+	margin-left: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.message-input textarea {
+	background: #292b2f;
+
+	width: 100%;
+	height: 50px;
+	padding: 9px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	resize: none;
+	outline: transparent 5px solid;
+	box-sizing: border-box;
+	border-radius: 10px;
+	border: none;
+
+	overflow-y: hidden;
+	justify-content: center;
+	vertical-align: middle;
+
+	font-size: 16px;
+	color: rgb(220, 220, 220);
+	caret-color: rgb(187, 185, 190);
+	cursor: text;
+}
+
+.message-input .attachment-list {
+	background-color: #292b2f;
+	display: flex;
+	position: fixed;
+	min-width: 220px;
+	max-width: 220px;
+	height: 60px;
+	bottom: 70px;
+	margin-left: 10px;
+
+	border-radius: 10px;
+
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.message .attachment {
+	max-width: 360px;
+	max-height: 360px;
+	margin-top: 10px;
+}
+
+.file-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	margin-top: 10px;
+	width: 400px;
+	height: 85px;
+	background-color: #292b2f;
+	border-radius: 10px;
+}
+
+.file-box .file-name {
+	color: #d6d7ca;
+	margin-left: 10px;
+}
+
+.file-box .file-size {
+	color: #d6d7ca;
+	margin-left: 10px;
+
+	font-size: 13px;
+	font-style: italic;
+}
+
+.file-box img {
+	width: 30px;
+	height: 30px;
+	margin-right: 20px;
+}
+
+.file-box img:hover {
+	cursor: pointer;
+}

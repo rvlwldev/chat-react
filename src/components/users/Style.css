@@ -1,0 +1,30 @@
+.user img {
+	grid-column: 1;
+
+	width: 40px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.user .name {
+	grid-column: 2;
+
+	font-size: 15px;
+	font-weight: bold;
+	justify-self: left;
+}
+
+.user .icons {
+	grid-column: 3;
+
+	display: flex;
+	justify-self: end;
+}
+
+.user .icons img {
+	width: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+}
