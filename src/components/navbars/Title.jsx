@@ -1,7 +1,7 @@
 import "./Style.css";
 
 const Title = () => {
-	return <div className="title">asfdjkl;dsfaj;lksdfajlk;</div>;
+	return <div className="title">채널 타이틀 헤더</div>;
 };
 
 export default Title;

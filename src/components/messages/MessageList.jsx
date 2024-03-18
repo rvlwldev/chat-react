@@ -14,6 +14,7 @@ const MessageList = () => {
 		/** @type Array */ messageList,
 		/** @type Function */ setMessageList,
 		/** @type Function */ fetchMessages,
+		resetMessageList,
 	} = messageStore();
 
 	useEffect(() => {
@@ -24,7 +25,7 @@ const MessageList = () => {
 
 		(async () => {
 			if (activeChannel.id)
-				setMessageList(await fetchMessages(activeChannel.id, params));
+				resetMessageList(await fetchMessages(activeChannel.id, params));
 		})();
 	}, [activeChannel]);
 

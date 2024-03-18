@@ -4,7 +4,7 @@ import Request from "services/Request";
 export default create((set) => ({
 	activeChannel: {},
 	setActiveChannel: (channel) => set({ activeChannel: channel }),
-
+	
 	publicChannels: [],
 	addPublicChannel: (channel) => {
 		if (channel instanceof Array)
@@ -17,6 +17,11 @@ export default create((set) => ({
 			}));
 	},
 
+	setActivePublicChannelByIndex: (index) => {
+		console.log(index);
+		set((state) => ({ activeChannel: state.publicChannels[index] }));
+	},
+
 	privateChannels: [],
 	addPrivateChannel: (channel) => {
 		if (channel instanceof Array)
@@ -27,6 +32,11 @@ export default create((set) => ({
 			set((state) => ({
 				privateChannels: [...state.privateChannels, channel],
 			}));
+	},
+
+	setActivePrivateChannelByIndex: (index) => {
+		console.log(index);
+		set((state) => ({ activeChannel: state.privateChannels[index] }));
 	},
 
 	fetchChannels: async () =>

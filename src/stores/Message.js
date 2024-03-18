@@ -9,6 +9,9 @@ export default create((set) => ({
 		}));
 	},
 	clearMessageList: () => set(() => ({ messageList: [] })),
+	resetMessageList: (messageList) => {
+		set((state) => ({ messageList: messageList }));
+	},
 
 	fetchMessages: async (channelId, params) => {
 		return await Request.get(Request.ROUTES.MESSAGE(channelId).BASE, params)
